@@ -1,0 +1,42 @@
+<!--
+  Generated template for the MarkerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>marker</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Campus Name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="name" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Campus ID</ion-label>
+      <ion-input type="number" value="" [(ngModel)]="id" ></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" (click)="onsubmit()" block>Submit</button>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)"
+    style="width:100%;height:400px">
+
+    <!--<agm-polygon [paths]="paths"
+        [clickable]="'true'"
+        ></agm-polygon>-->
+
+    <agm-polygon [paths]="paths" [clickable]="true" (polyclick)="mapClicked($event)"></agm-polygon>
+
+    <agm-marker *ngFor="let m of Campus.markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lati" [longitude]="m.longi"
+      [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+    </agm-marker>
+
+  </agm-map>
+</ion-content>
