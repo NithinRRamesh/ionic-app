@@ -23,6 +23,10 @@
       <ion-label floating>Campus ID</ion-label>
       <ion-input type="number" value="" [(ngModel)]="id" ></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label floating>User Email id</ion-label>
+        <ion-input type="number" value="" [(ngModel)]="emailId" ></ion-input>
+      </ion-item>
   </ion-list>
   <button ion-button color="primary" (click)="onsubmit()" block>Submit</button>
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)"

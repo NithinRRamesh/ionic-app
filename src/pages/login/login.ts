@@ -1,3 +1,4 @@
+import { UserPage } from './../user/user';
 import { ToastController } from 'ionic-angular';
 import { StartPage } from './../start/start';
 import { Observable } from 'rxjs/Rx';
@@ -40,6 +41,9 @@ export class LoginPage {
     console.log(auth)
     if(auth==1){
       this.navCtrl.setRoot(StartPage)
+    }
+    if(auth==2){
+      this.navCtrl.setRoot(UserPage)
     }
     else{
       let toast = this.toastCtrl.create({

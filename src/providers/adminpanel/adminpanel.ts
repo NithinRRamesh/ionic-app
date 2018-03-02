@@ -24,7 +24,7 @@ export class AdminpanelProvider {
 
   pushMarkers(campus):Observable<any>{
 
-    return this.http.post(this.markersUrl,JSON.stringify(campus))//.map((res:Response)=>res.json())
+    return this.http.post(this.markersUrl,campus)//.map((res:Response)=>res.json())
   }
 
 }

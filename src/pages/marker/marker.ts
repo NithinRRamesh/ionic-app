@@ -22,10 +22,12 @@ export class MarkerPage {
   name:string="";
   id:number;
   bid=0;
+  emailId="";
   
   Campus={
     campus_name:"",
     campus_id:0,
+    emailId:"",
     markers: [ ]
   }
   paths: Array<any>=[];
@@ -96,7 +98,9 @@ export class MarkerPage {
     console.log(this.Campus);
     this.Campus.campus_name=this.name;
     this.Campus.campus_id=this.id;
+    this.Campus.emailId=this.emailId;
     var len = this.Campus.markers.length;
+    
     if(len <1 ){
       alert("Select Atleast one position");
     }else if(this.Campus.campus_name==""){

@@ -1,3 +1,4 @@
+import { UserPage } from './../pages/user/user';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -27,6 +28,7 @@ import { LoginProvider } from '../providers/login/login';
   declarations: [
     MyApp,
     DashboardPage,
+    UserPage,
     DetailsPage,
     SummaryPage,
     BoundaryPage,
@@ -50,6 +52,7 @@ import { LoginProvider } from '../providers/login/login';
     MyApp,
     DashboardPage,
     DetailsPage,
+    UserPage,
     SummaryPage,
     BoundaryPage,
     MarkerPage,

@@ -1,0 +1,65 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>user</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <agm-map
+  [latitude]="lat" 
+  [longitude]="lng"
+  [mapTypeId]="'roadmap'"
+  [zoom]="zoom"
+  [mapDraggable]="'true'"
+  [minZoom]=16
+  [maxZoom]=18
+  >
+
+  <div *ngFor="let m of markers">
+      <div [ngSwitch]="m.water_status">
+  
+     <agm-circle *ngSwitchCase="1"
+        [latitude]="m.lat" 
+        [longitude]="m.lon"
+        [radius]="rad"
+        [fillColor]="'green'"
+        [fillOpacity]="opac"
+        (circleClick)="openModal(m)"
+      >
+      </agm-circle>
+     
+      <agm-circle *ngSwitchCase="0"
+        [latitude]="m.lat" 
+        [longitude]="m.lon"
+        [radius]="rad"
+        [fillColor]="'yellow'"
+        [fillOpacity]="opac"
+        (circleClick)="openModal(m)"
+        
+      >
+      </agm-circle>
+      
+      <agm-circle *ngSwitchCase="-1"
+        [latitude]="m.lat" 
+        [longitude]="m.lon"
+        [radius]="rad"
+        [fillColor]="'red'"
+        [fillOpacity]="opac"
+        (circleClick)="openModal(m)"
+      >
+      
+      </agm-circle>
+      </div>
+    </div>
+    
+  </agm-map>
+</ion-content>
